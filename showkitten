@@ -1,0 +1,9 @@
+#!/bin/sh
+
+URL="http://placekitten.com/$(($RANDOM % 500 + 300))/$(($RANDOM % 500 + 300))"
+DIR="/tmp/kitten"
+FILE="$DIR/$RANDOM.png"
+
+mkdir -p $DIR
+curl -s $URL > $FILE
+open $FILE
